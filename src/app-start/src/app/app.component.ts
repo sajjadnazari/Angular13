@@ -20,10 +20,7 @@ export class AppComponent {
     this.password ="changed";
   }
 
-  OnChangeLentgh(value :string){
-    const parseValue = parseInt(value);
-    if(!isNaN(parseValue)){
-        this.password = value;
-    }
+  OnChangeLentgh(value :any){
+    console.log(value);
   }
 }

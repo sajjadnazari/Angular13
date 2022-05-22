@@ -2,13 +2,13 @@
 <div>
   <input type="text" value="" (input)="OnChangeLentgh($any($event.target).value)" />
 </div>
-<div>
+<div *ngIf="password">
   <input type="checkbox" (change)="ChangeCheckBox()">
 </div>
 <div>
   <input type="text" [value]="getPassword()" />
 </div>
-<div>
+<div >
   <button (click)="onButtonClick()">Check</button>
 </div>
 
