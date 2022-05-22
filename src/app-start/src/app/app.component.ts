@@ -6,7 +6,24 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  onButtonClick(){
-   console.log('button click');
+  password:string;
+  constructor() {
+    this.password="";
+  }
+  onButtonClick() {
+    this.password = "your pass";
+  }
+  getPassword(){
+    return this.password;
+  }
+  ChangeCheckBox(){
+    this.password ="changed";
+  }
+
+  OnChangeLentgh(value :string){
+    const parseValue = parseInt(value);
+    if(!isNaN(parseValue)){
+        this.password = value;
+    }
   }
 }
