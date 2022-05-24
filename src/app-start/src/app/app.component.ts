@@ -8,4 +8,8 @@ import { lorem } from "faker";
 export class AppComponent {
   title ="app-start";
   randomText :string = lorem.sentence();
+  inputText : string ="";
+  ChangeInput(text:string){
+    this.inputText = text;
+  }
 }
