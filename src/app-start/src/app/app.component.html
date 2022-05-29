@@ -22,3 +22,15 @@
 <ng-template #notIf>
   <p>this not !!!</p>
 </ng-template>
+
+<div [ngSwitch]="currentPage">
+<div *ngSwitchCase="0">
+<p>zero</p>
+</div>
+<div *ngSwitchCase="1">
+  <p>one</p>
+  </div>
+  <div *ngSwitchDefault>
+    <p>default</p>
+    </div>
+</div>
