@@ -7,9 +7,13 @@ import { lorem } from "faker";
 })
 export class AppComponent {
   title ="app-start";
+  isExist :boolean =false;
   currentPage : number = 0;
   setActiveClass(index:number){
     return index ===this.currentPage?'active':'';
+  }
+  checkWindowIndex(index : number){
+    return Math.abs(this.currentPage - index) < 5
   }
   changePage(){
     this.currentPage -=1;

@@ -1,21 +1,24 @@
 <nav aria-label="...">
   <ul class="pagination">
     <li class="page-item" [ngClass]="{disabled : currentPage === 0}">
-      <a (click)="changePage()" class="page-link">Previous</a>
+      <a (click)="changePage()" class="page-link" href="#">Previous</a>
     </li>
     <ng-container
      *ngFor="let image of images;let i = index">
-      <li class="page-item" *ngIf="i<5" [ngClass]="setActiveClass(i)" >
+      <li class="page-item" *ngIf="checkWindowIndex(i)" [ngClass]="setActiveClass(i)" >
         <a (click)="currentPage = i" class="page-link" href="#">{{i+1}}</a>
       </li>
     </ng-container>
     <li class="page-item" [ngClass]="{disabled : currentPage === images.length-1}">
       <a (click)="currentPage = currentPage+1" class="page-link" href="#">Next</a>
     </li>
-
   </ul>
 </nav>
 <div>
   <h2>{{images[currentPage].title}}</h2>
   <img [src]="images[currentPage].url" alt="">
 </div>
+<p *ngIf="isExist;else notIf">this is if</p>
+<ng-template #notIf>
+  <p>this not !!!</p>
+</ng-template>
