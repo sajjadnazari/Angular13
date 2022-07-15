@@ -9,7 +9,13 @@ const routes: Routes = [
     loadChildren: () =>
       import('./elements/elements.module').then((el) => el.ElementsModule),
   },
-  { path: '', component: HomeComponent },
+  {
+    path: 'collections',
+    loadChildren: () =>
+      import('./collections/collections.module').then(
+        (el) => el.CollectionsModule
+      ),
+  },
   { path: 'not-found', component: NotFoundComponent },
   { path: '**', redirectTo: '/not-found' },
 ];
