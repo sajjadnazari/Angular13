@@ -4,13 +4,18 @@ import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 
 const routes: Routes = [
- {path :'' ,component : HomeComponent},
- {path :'not-found' ,component: NotFoundComponent},
- {path :'**' ,redirectTo: '/not-found'}
+  {
+    path: 'elements',
+    loadChildren: () =>
+      import('./elements/elements.module').then((el) => el.ElementsModule),
+  },
+  { path: '', component: HomeComponent },
+  { path: 'not-found', component: NotFoundComponent },
+  { path: '**', redirectTo: '/not-found' },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
